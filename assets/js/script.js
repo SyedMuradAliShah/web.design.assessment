@@ -6,24 +6,39 @@ const nextBtn = document.getElementById('nextBtn');
 const toggleIcon = toggleQuizBtn.querySelector('.toggle-icon i');
 
 let currentQuestion = 0;
+let isSubmitted = false; // To prevent re-showing questions after submission
 
 toggleQuizBtn.addEventListener('click', () => {
   const currentDisplay = window.getComputedStyle(quizBox).display;
   const isHidden = currentDisplay === 'none';
   quizBox.style.display = isHidden ? 'block' : 'none';
-  toggleQuizBtn.classList.toggle('open', isHidden); // toggle 'open' when showing
+  toggleQuizBtn.classList.toggle('open', isHidden);
 });
 
 function showQuestion(index) {
+  if (isSubmitted) return; // prevent showing if already submitted
+
   questions.forEach((q, i) => {
     q.classList.toggle('active', i === index);
   });
+
+  // Hide prevBtn if first question, show otherwise
+  prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+
+  // Change Next button text to 'Submit' on last question
+  if (index === questions.length - 1) {
+    nextBtn.textContent = 'Submit';
+  } else {
+    nextBtn.textContent = 'Next';
+  }
 }
 
 nextBtn.addEventListener('click', () => {
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
     showQuestion(currentQuestion);
+  } else if (currentQuestion === questions.length - 1) {
+    submitQuiz();
   }
 });
 
@@ -34,9 +49,18 @@ prevBtn.addEventListener('click', () => {
   }
 });
 
+function submitQuiz() {
+  isSubmitted = true;
+  quizBox.innerHTML = `
+    <div class="text-center p-5">
+      <h4 class="text-success">Thank you!</h4>
+      <p>Your answers are submitted for evaluation.</p>
+    </div>
+  `;
+}
+
 // Initialize visibility
 showQuestion(currentQuestion);
-
 
 
 // table data
