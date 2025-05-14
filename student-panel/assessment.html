@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Assessment</title>
+  <link href="./assets/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/all.min.css" />
+</head>
+
+<body>
+  <div class="dashbaord">
+        <nav class="sidebar" id="sidebar">
+      <button class="close-button" id="close-button">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </button>
+      <div class="sidebar-header mb-4 fw-bold">
+        LOGO
+      </div>
+      <ul class="sidebar-menu p-0">
+        <li>
+          <a href="./info.html" class="d-flex align-items-center gap-2 ">
+            <svg viewBox="0 0 24 24" width="22px" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M3 3h8v10H3V3zm2 2v6h4V5H5zm8-2h8v6h-8V3zm2 2v2h4V5h-4zm-2 6h8v10h-8V11zm2 2v6h4v-6h-4zM3 15h8v6H3v-6zm2 2v2h4v-2H5z">
+                </path>
+              </g>
+            </svg>
+            Student Info
+          </a>
+        </li>
+        <li>
+          <a href="./profile.html" class="d-flex align-items-center gap-2">
+            <svg viewBox="0 0 24 24" width="22px" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <circle cx="12" cy="6" r="4"></circle>
+                <path opacity="0.5"
+                  d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z">
+                </path>
+              </g>
+            </svg>
+            My Profile
+          </a>
+        </li>
+        <li>
+          <a href="./levels.html" class="d-flex align-items-center gap-2">
+            <svg viewBox="0 0 24 24" width="22px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.6702 6.9499C21.0302 4.7799 19.2202 2.9699 17.0502 2.3299C15.4002 1.8499 14.2602 1.8899 13.4702 2.4799C12.5202 3.1899 12.4102 4.4699 12.4102 5.3799V7.8699C12.4102 10.3299 13.5302 11.5799 15.7302 11.5799H18.6002C19.5002 11.5799 20.7902 11.4699 21.5002 10.5199C22.1102 9.7399 22.1602 8.5999 21.6702 6.9499Z" ></path> <path opacity="0.4" d="M18.9094 13.3597C18.6494 13.0597 18.2694 12.8897 17.8794 12.8897H14.2994C12.5394 12.8897 11.1094 11.4597 11.1094 9.69966V6.11966C11.1094 5.72966 10.9394 5.34966 10.6394 5.08966C10.3494 4.82966 9.94941 4.70966 9.56941 4.75966C7.21941 5.05966 5.05941 6.34966 3.64941 8.28966C2.22941 10.2397 1.70941 12.6197 2.15941 14.9997C2.80941 18.4397 5.55941 21.1897 9.00941 21.8397C9.55941 21.9497 10.1094 21.9997 10.6594 21.9997C12.4694 21.9997 14.2194 21.4397 15.7094 20.3497C17.6494 18.9397 18.9394 16.7797 19.2394 14.4297C19.2894 14.0397 19.1694 13.6497 18.9094 13.3597Z" ></path> </g></svg>
+            Levels
+          </a>
+        </li>
+        <li>
+          <a href="./assessment.html" class="d-flex align-items-center gap-2 active">
+            <svg viewBox="0 0 32 32" width="22px" id="OBJECT" xmlns="http://www.w3.org/2000/svg" fill="#7b7b7b" stroke="#7b7b7b"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.256"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:#cacaca;}</style></defs><title></title><rect height="26" rx="1" ry="1" width="18" x="5" y="5"></rect><path class="cls-1" d="M26.71,7.29l-6-6A1,1,0,0,0,20,1H10A1,1,0,0,0,9,2V26a1,1,0,0,0,1,1H26a1,1,0,0,0,1-1V8A1,1,0,0,0,26.71,7.29Z"></path><path d="M20.71,1.29A1,1,0,0,0,20,1V7a1,1,0,0,0,1,1h6a1,1,0,0,0-.29-.71Z"></path><path d="M19,13.5H14a1,1,0,0,1,0-2h5a1,1,0,0,1,0,2Z"></path><path d="M22,17.5H14a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"></path><path d="M22,21.5H14a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"></path></g></svg>
+            Assessment
+          </a>
+        </li>
+        
+        <li>
+          <a href="./changepassword.html" class="d-flex align-items-center gap-2">
+            <svg viewBox="0 0 24 24" fill="none" width="22px" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path opacity="0.5"
+                  d="M2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.75736 10 5.17157 10 8 10H16C18.8284 10 20.2426 10 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16Z">
+                </path>
+                <path
+                  d="M8 17C8.55228 17 9 16.5523 9 16C9 15.4477 8.55228 15 8 15C7.44772 15 7 15.4477 7 16C7 16.5523 7.44772 17 8 17Z">
+                </path>
+                <path
+                  d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z">
+                </path>
+                <path
+                  d="M17 16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16C15 15.4477 15.4477 15 16 15C16.5523 15 17 15.4477 17 16Z">
+                </path>
+                <path
+                  d="M6.75 8C6.75 5.10051 9.10051 2.75 12 2.75C14.8995 2.75 17.25 5.10051 17.25 8V10.0036C17.8174 10.0089 18.3135 10.022 18.75 10.0546V8C18.75 4.27208 15.7279 1.25 12 1.25C8.27208 1.25 5.25 4.27208 5.25 8V10.0546C5.68651 10.022 6.18264 10.0089 6.75 10.0036V8Z">
+                </path>
+              </g>
+            </svg>
+            Change Password
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <div class="content-header d-flex justify-content-between justify-content-lg-end align-items-center p-3 m-3">
+        <button class="toggle-button" id="toggle-button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="d-flex align-items-center gap-4">
+          <div class="changetheme">
+            <!-- Sun Icon with black fill -->
+            <svg viewBox="0 0 24 24" width="25px" style="cursor: pointer" id="fa-sun" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.25 22C7.25 21.5858 7.58579 21.25 8 21.25H16C16.4142 21.25 16.75 21.5858 16.75 22C16.75 22.4142 16.4142 22.75 16 22.75H8C7.58579 22.75 7.25 22.4142 7.25 22Z"
+                  fill="#000000"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V3C12.75 3.41421 12.4142 3.75 12 3.75C11.5858 3.75 11.25 3.41421 11.25 3V2C11.25 1.58579 11.5858 1.25 12 1.25ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H3C3.41421 11.25 3.75 11.5858 3.75 12C3.75 12.4142 3.41421 12.75 3 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM20.25 12C20.25 11.5858 20.5858 11.25 21 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H21C20.5858 12.75 20.25 12.4142 20.25 12Z"
+                  fill="#000000"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.08267 15.25H2C1.58579 15.25 1.25 15.5858 1.25 16C1.25 16.4142 1.58579 16.75 2 16.75H22C22.4142 16.75 22.75 16.4142 22.75 16C22.75 15.5858 22.4142 15.25 22 15.25H17.9173H6.08267Z"
+                  fill="#000000"></path>
+                <path opacity="0.5"
+                  d="M4.25 19C4.25 18.5858 4.58579 18.25 5 18.25H19C19.4142 18.25 19.75 18.5858 19.75 19C19.75 19.4142 19.4142 19.75 19 19.75H5C4.58579 19.75 4.25 19.4142 4.25 19Z"
+                  fill="#000000"></path>
+                <g opacity="0.5">
+                  <path
+                    d="M4.39838 4.39838C4.69127 4.10549 5.16615 4.10549 5.45904 4.39838L5.85188 4.79122C6.14477 5.08411 6.14477 5.55898 5.85188 5.85188C5.55898 6.14477 5.08411 6.14477 4.79122 5.85188L4.39838 5.45904C4.10549 5.16615 4.10549 4.69127 4.39838 4.39838Z"
+                    fill="#000000"></path>
+                  <path
+                    d="M19.6009 4.39864C19.8938 4.69153 19.8938 5.16641 19.6009 5.4593L19.2081 5.85214C18.9152 6.14503 18.4403 6.14503 18.1474 5.85214C17.8545 5.55924 17.8545 5.08437 18.1474 4.79148L18.5402 4.39864C18.8331 4.10575 19.308 4.10575 19.6009 4.39864Z"
+                    fill="#000000"></path>
+                </g>
+                <path opacity="0.5"
+                  d="M5.25 12C5.25 13.1778 5.5521 14.2858 6.08267 15.25H17.9173C18.4479 14.2858 18.75 13.1778 18.75 12C18.75 8.27208 15.7279 5.25 12 5.25C8.27208 5.25 5.25 8.27208 5.25 12Z"
+                  fill="#000000"></path>
+              </g>
+            </svg>
+
+            <!-- Moon Icon with black fill -->
+            <svg viewBox="0 0 24 24" width="25px" id="fa-moon" style="display: none; cursor: pointer" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M1.25 16C1.25 15.5858 1.58579 15.25 2 15.25H22C22.4142 15.25 22.75 15.5858 22.75 16C22.75 16.4142 22.4142 16.75 22 16.75H2C1.58579 16.75 1.25 16.4142 1.25 16ZM7.25 22C7.25 21.5858 7.58579 21.25 8 21.25H16C16.4142 21.25 16.75 21.5858 16.75 22C16.75 22.4142 16.4142 22.75 16 22.75H8C7.58579 22.75 7.25 22.4142 7.25 22Z"
+                  fill="#ffffff"></path>
+                <path opacity="0.5"
+                  d="M4.25 19C4.25 18.5858 4.58579 18.25 5 18.25H19C19.4142 18.25 19.75 18.5858 19.75 19C19.75 19.4142 19.4142 19.75 19 19.75H5C4.58579 19.75 4.25 19.4142 4.25 19Z"
+                  fill="#ffffff"></path>
+                <path opacity="0.5"
+                  d="M12 2C6.47715 2 2 6.47715 2 12C2 13.4222 2.2969 14.7751 2.83209 16H21.1679C21.7031 14.7751 22 13.4222 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2Z"
+                  fill="#ffffff"></path>
+                <path
+                  d="M19.9001 2.30719C19.7392 1.8976 19.1616 1.8976 19.0007 2.30719L18.5703 3.40247C18.5212 3.52752 18.4226 3.62651 18.298 3.67583L17.2067 4.1078C16.7986 4.26934 16.7986 4.849 17.2067 5.01054L18.298 5.44252C18.4226 5.49184 18.5212 5.59082 18.5703 5.71587L19.0007 6.81115C19.1616 7.22074 19.7392 7.22074 19.9001 6.81116L20.3305 5.71587C20.3796 5.59082 20.4782 5.49184 20.6028 5.44252L21.6941 5.01054C22.1022 4.849 22.1022 4.26934 21.6941 4.1078L20.6028 3.67583C20.4782 3.62651 20.3796 3.52752 20.3305 3.40247L19.9001 2.30719Z"
+                  fill="#ffffff"></path>
+                <path
+                  d="M16.0328 8.12967C15.8718 7.72009 15.2943 7.72009 15.1333 8.12967L14.9764 8.52902C14.9273 8.65407 14.8287 8.75305 14.7041 8.80237L14.3062 8.95987C13.8981 9.12141 13.8981 9.70107 14.3062 9.86261L14.7041 10.0201C14.8287 10.0694 14.9273 10.1684 14.9764 10.2935L15.1333 10.6928C15.2943 11.1024 15.8718 11.1024 16.0328 10.6928L16.1897 10.2935C16.2388 10.1684 16.3374 10.0694 16.462 10.0201L16.8599 9.86261C17.268 9.70107 17.268 9.12141 16.8599 8.95987L16.462 8.80237C16.3374 8.75305 16.2388 8.65407 16.1897 8.52902L16.0328 8.12967Z"
+                  fill="#ffffff"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="notifications">
+            <div class="dropdown">
+              <button class="dropdown-toggle p-0 border-0 position-relative" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="badge position-absolute">02</div>
+                <svg viewBox="0 0 24 24" width="25px" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path opacity="0.5"
+                      d="M18.7491 9V9.7041C18.7491 10.5491 18.9903 11.3752 19.4422 12.0782L20.5496 13.8012C21.5612 15.3749 20.789 17.5139 19.0296 18.0116C14.4273 19.3134 9.57274 19.3134 4.97036 18.0116C3.21105 17.5139 2.43882 15.3749 3.45036 13.8012L4.5578 12.0782C5.00972 11.3752 5.25087 10.5491 5.25087 9.7041V9C5.25087 5.13401 8.27256 2 12 2C15.7274 2 18.7491 5.13401 18.7491 9Z">
+                    </path>
+                    <path
+                      d="M7.24316 18.5454C7.8941 20.5506 9.77767 22.0002 11.9998 22.0002C14.222 22.0002 16.1055 20.5506 16.7565 18.5454C13.611 19.1357 10.3886 19.1357 7.24316 18.5454Z">
+                    </path>
+                  </g>
+                </svg>
+              </button>
+              <ul class="dropdown-menu position-absolute p-0 overflow-hidden border-0 shadow-sm">
+                <li>
+                  <a class="dropdown-item py-3" href="#">
+                    <p class="mb-0 small fw-bold">Lorem ipsum dolor sit...</p>
+                    <p class="small mb-0">
+                      A magnam illo maxime error animi est..
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item py-3" href="#">
+                    <p class="mb-0 small fw-bold">Lorem ipsum dolor sit...</p>
+                    <p class="small mb-0">
+                      A magnam illo maxime error animi est..
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item py-3" href="#">
+                    <p class="mb-0 small fw-bold">Lorem ipsum dolor sit...</p>
+                    <p class="small mb-0">
+                      A magnam illo maxime error animi est..
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile">
+            <div class="dropdown">
+              <button class="dropdown-toggle p-0 border-0" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" width="25px" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <circle cx="12" cy="6" r="4"></circle>
+                    <path opacity="0.5"
+                      d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z">
+                    </path>
+                  </g>
+                </svg>
+              </button>
+              <ul class="dropdown-menu position-absolute border-0 shadow-sm">
+                <li>
+                  <a class="dropdown-item mb-2" href="#"><i class="fa-regular fa-user"></i> Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item mb-2" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fa-solid fa-power-off"></i> Log Out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content px-4">
+        <h1 class="fs-5">Assessment</h1>
+        <nav
+          style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+          aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small"><a href="./index.html">Dashboard</a></li>
+            <li class="breadcrumb-item small active" aria-current="page">Assessment</li>
+          </ol>
+        </nav>
+        <div class="wrapper mt-4">
+          <div class="row">
+            <div class="table-search text-end mb-3">
+              <form action="" class="d-flex justify-content-end align-items-center gap-2 position-relative">
+                <input type="text" class="form-control w-auto py-2 ps-2 pe-4" placeholder="Search....">
+                <button type="submit"
+                  class="position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent pe-2"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+              </form>
+            </div>
+            <div class="table-responsive rounded-4">
+              <table class="mb-0 custom-table w-100">
+                <thead>
+                  <tr class="border-bottom">
+                    <th class="py-3">#</th>
+                    <th class="py-3">Level</th>
+                    <th class="py-3">Attempt</th>
+                    <th class="py-3">Marks</th>
+                    <th class="py-3">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Level 1</td>
+                    <td>First Attempt</td>
+                    <td><span class="badge text-danger bg-danger bg-opacity-10">30%</span></td>
+                    <td>
+                      <a href="#" class="bg-success text-success bg-opacity-10 rounded-circle text-decoration-none view-details" data-id="1"><i class="fa-regular fa-eye"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Level 1</td>
+                    <td>Second Attempt</td>
+                    <td><span class="badge text-warning bg-warning bg-opacity-10">45%</span></td>
+                    <td>
+                      <a href="#" class="bg-success text-success bg-opacity-10 rounded-circle text-decoration-none view-details" data-id="2"><i class="fa-regular fa-eye"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Level 1</td>
+                    <td>Third Attempt</td>
+                    <td><span class="badge text-success bg-success bg-opacity-10">100%</span></td>
+                    <td>
+                      <a href="#" class="bg-success text-success bg-opacity-10 rounded-circle text-decoration-none view-details" data-id="3"><i class="fa-regular fa-eye"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <!-- Details Container (empty initially) -->
+            <div id="detailsContainer" class="mt-3 d-none position-relative">
+              <button type="button" onclick="closeDetails()" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close"></button>
+            </div>
+            
+            
+            
+            
+            <div class="pagination-sec mt-4 text-center">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link active" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/javascript/jquery.js"></script>
+  <script src="./assets/javascript/javascript.js"></script>
+  <script src="./assets/javascript/select2.min.js"></script>
+  <script src="./assets/javascript/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.js-example-basic-single').select2();
+    });
+  </script>
+</body>
+
+</html>

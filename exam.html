@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/select2.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<section class="exam-sec vh-100 overflow-auto border-top-0">
+    <div class="title position-fixed w-100 primary-bg py-2">
+        <div class="row row-cols-1 row-cols-md-3 align-items-center">
+            <div class="col mb-3 mb-md-0">
+                <div id="timer" class="bg-white fs-5 fw-semibold py-2 px-3 rounded-3">00:39:60</div>
+            </div>
+            <div class="col mb-3 mb-md-0">
+                <div class="text-center text-white">
+                    <span class="fs-5 fw-semibold">Assessment</span> <br>
+                    <span class="">2025</span>
+                </div>
+            </div>
+            <div class="col mb-md-0">
+                <div class="logo d-flex justify-content-end me-3">
+                    <p class="bg-white p-2 rounded-3 fs-6 mb-0 fw-bold text-uppercase">logo</p>
+                    <!-- <img src="./assets/images/logo.png" width="100px" class="bg-white p-2 rounded-3" alt=""> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="exam-body mt-5 pt-5">
+        <div class="container">
+           <div class="row row-cols-1 row-cols-lg-2 align-items-center">
+            <div class="col">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid officia soluta ut atque quo unde id dolorum ad repellat eaque ea, ex distinctio. Molestias cumque corporis vitae non, facilis blanditiis magni illo veritatis odio. Est, quibusdam quis? Quos animi quas quae, ab dolore magnam non modi expedita inventore nesciunt. Officia?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid officia soluta ut atque quo unde id dolorum ad repellat eaque ea, ex distinctio. Molestias cumque corporis vitae non, facilis blanditiis magni illo veritatis odio. Est, quibusdam quis? Quos animi quas quae, ab dolore magnam non modi expedita inventore nesciunt. Officia?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid officia soluta ut atque quo unde id dolorum ad repellat eaque ea, ex distinctio. Molestias cumque corporis vitae non, facilis blanditiis magni illo veritatis odio. Est, quibusdam quis? Quos animi quas quae, ab dolore magnam non modi expedita inventore nesciunt. Officia?
+                </p>
+            </div>
+            <div class="col">
+                <img src="./assets/images/months.jpg" width="100%" alt="">
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="quiz-sec fixed-bottom">
+        <div class="text-center">
+            <div id="toggleQuizBtn" class="bg-transparent p-0 m-0" ><span class="fs-5 px-5 py-2 m-0 rounded-top-4 d-inline-block">Questions</span> <span class="toggle-icon fs-5 py-2 px-3 m-0 rounded-top-4 d-inline-block"><i class="fa-solid fa-angle-up"></i></span></div>
+
+        </div>
+
+    <div class="quiz-box mx-auto bg-light" id="quizBox">
+      <div class="question p-4 active">
+        <h6 class=" text-start fw-semibold mb-3">Question 1: What is 2 + 2?</h6>
+            <div class="form-check d-flex align-items-center bg-white rounded-3 p-2 border border-1 mb-3">
+                <input class="form-check-input ms-0 me-2 mt-0" type="radio" name="flexRadioDefault" id="a">
+                <label class="form-check-label w-75" for="a">
+                  30
+                </label>
+              </div>
+              <div class="form-check d-flex align-items-center bg-white rounded-3 p-2 border border-1 mb-3">
+                <input class="form-check-input ms-0 me-2 mt-0" type="radio" name="flexRadioDefault" id="b">
+                <label class="form-check-label w-75" for="b">
+                  100
+                </label>
+              </div>
+              <div class="form-check d-flex align-items-center bg-white rounded-3 p-2 border border-1 mb-3">
+                <input class="form-check-input ms-0 me-2 mt-0" type="radio" name="flexRadioDefault" id="c">
+                <label class="form-check-label w-75" for="c">
+                  40
+                </label>
+              </div>
+              <div class="form-check  d-flex align-items-center bg-white rounded-3 p-2 border border-1">
+                <input class="form-check-input ms-0 me-2 mt-0" type="radio" name="flexRadioDefault" id="d">
+                <label class="form-check-label w-75" for="d">
+                  20
+                </label>
+              </div>
+    </div>
+      <div class="question p-4">
+            <h6 class="text-start fw-semibold mb-3">Question 2: There are 114 surahs in the Holy Qur'an.</h6>
+            <div class="form-check d-flex align-items-center bg-white rounded-3 p-2 border border-1 mb-3">
+                <input class="form-check-input ms-0 me-2 mt-0" type="radio" name="flexRadioDefault" id="True">
+                <label class="form-check-label w-75" for="True">
+                  True
+                </label>
+              </div>
+              <div class="form-check d-flex align-items-center bg-white rounded-3 p-2 border border-1">
+                <input class="form-check-input ms-0 me-2 mt-0" type="radio" name="flexRadioDefault" id="False">
+                <label class="form-check-label w-75" for="False">
+                  False
+                </label>
+              </div>
+      </div>
+      <div class="question p-4">
+            <h6 class="text-start fw-semibold mb-3">Question 3: There are 114 surahs in the Holy Qur'an.</h6>
+            <div class="form-area">
+                <input type="text" class="form-control" placeholder="Your Answer">
+                <button class="d-none d-lg-block showKeyboardBtn"></button>
+              </div>
+      </div>
+      <div class="question p-4">
+                    <h6 class="text-start fw-semibold mb-3">Question 4: maiores molestiae qui inventore, libero quasi architecto</h6>
+                    <div class="form-area">
+                      <textarea class="form-control" placeholder="Leave a comment here" style="height: 80px"></textarea>
+                      <button class="d-none d-lg-block showKeyboardBtn"></button>
+                    </div>
+      </div>
+      <div class="question p-4">
+        <h6 class="text-start fw-semibold">Question 4: maiores molestiae qui inventore, libero quasi architecto</h6>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <div class="col">
+                  <div class="match-word-box mt-4 mt-lg-0 text-center p-3 py-lg-4 py-xl-4 p-xl-4 text-black-50">
+                    <h5 class="m-0">Diseases</h5>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="match-word-box mt-4 mt-lg-0 text-center p-3 py-lg-4 py-xl-4 p-xl-4  text-black-50">
+                    <h5 class="m-0">Water</h5>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="match-word-box mt-4 mt-lg-0 text-center p-3 py-lg-4 py-xl-4 p-xl-4  text-black-50">
+                    <h5 class="m-0">Rubbish</h5>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="match-word-box mt-4 mt-lg-0 text-center p-3 py-lg-4 py-xl-4 p-xl-4  text-black-50">
+                    <h5 class="m-0">House</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="option-con mt-4">
+                  <div class="draggable border p-3 mb-3 mb-lg-0" draggable="true" id="item1">Rubbish</div>
+                  <div class="draggable border p-3 mb-3 mb-lg-0" draggable="true" id="item2">Diseases</div>
+                  <div class="draggable border p-3 mb-3 mb-lg-0" draggable="true" id="item3">House</div>
+                  <div class="draggable border p-3 mb-3 mb-lg-0" draggable="true" id="item4">Water</div>
+                </div>
+              </div>
+      </div>
+    
+      <div class="btn-group d-flex justify-content-center gap-3 px-3 py-2 rounded-0">
+        <button id="prevBtn" class="rounded-circle"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="nextBtn" class="rounded-circle"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    </div>
+</section>
+        <!-- ===============script-tag=============== -->
+         <script src="./assets/js/jquery.js"></script>
+         <script src="./assets/js/script.js"></script>
+         <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
