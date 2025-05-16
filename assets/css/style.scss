@@ -74,6 +74,19 @@ $primary-color:#4b3cef;
       }
     
 }
+.question-number{
+    margin-top: 20px;
+   
+    .attempt{
+        background-color: green;
+    }
+    .not-attempt{
+        background-color: red;
+    }
+}
+.exam-body{
+    margin-top: 10rem;
+}
 .exam-sec{
     border: 0.5rem solid $primary-color;
     .toggle-icon i {
@@ -123,100 +136,17 @@ $primary-color:#4b3cef;
     padding: 8px 12px;
     margin: 4px;
   }
-.wrapper{
-    box-shadow: 0px 5px 15px 0px #80808026;
-    border-radius: 10px;
-    margin: 0 auto;
-    border: 1px solid $primary-color;
-    p{
-        border-bottom: 1px solid #00005342;
-        padding-bottom: 15px;
-        b{
-            font-size: 1.1rem;
-        }
-        &:nth-last-child(1){
-            margin: 0;
-            border: 0;
-            padding: 0;
-        }
-    }
-    .country-flag{
-        width: 40px;
-    }
-}
+
 .buttons{
     margin: auto;
 }
-.instruction{
-    max-width: 600px;
-    li{
-        line-height: 2.5;
-        font-weight: 500;
-        p{
-            font-size: 1rem;
-        }
-    }
-}
-.skills{
-    width: 100% !important;
-.skill-box{
-    background-color: #ffffff6b;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid #e7e7e7;
-  transition: 0.4s all;
-  cursor: pointer;
-  .nmbr-img{
-    width: 100px;
-  }
-  &:hover{
-    border: 1px solid $primary-color;
-    box-shadow: 0px 5px 10px rgb(205, 205, 205);
-    background-color: #ffffff;
-    a{
-        color: #000000;
-    }
-  }
-  
-  img{
-    width: 150px;
-    border-radius: 10px;
-  }
-}
-a{
-    color: #000000;
-}
-}
+
+
 h5
 {
   color: $primary-color;
   text-align: center;
   font-weight: 600;
-}
-
-.aspect-quiz{
-.box{
-    background-color: #ffffff75;
-    backdrop-filter: blur(10px);
-    border: 1px solid $primary-color;
-    border-radius: 10px;
-    .question-box{
-        label{
-            font-size: 1rem;
-            font-weight: 500;
-            color: rgb(107, 107, 107);
-        }
-    }
-    .quiz-img{
-        border-radius: 10px;
-        overflow: hidden;
-    }
-}
-form{
-    max-width: 800px;
-}
 }
 
   
@@ -273,35 +203,8 @@ form{
         }
       }
   } 
-  .upload-img{
-    .image-preview {
-        max-width: 300px;
-        max-height: 300px;
-        border: 1px solid #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-  
-      .preview {
-        max-width: 100%;
-        max-height: 100%;
-      }
-  }
-  .tab-content{
-    form{
-        label{
-            transition: 0.3s all;
-        }
-        input{
-            &:focus{
-                border-color: #000053;
-                box-shadow: 0px 5px 7px #3b2c7c39;
-            }
-        }
-    }
-  }
+
+
 
  
 

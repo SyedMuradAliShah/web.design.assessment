@@ -1,67 +1,99 @@
+ var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+        },
+        640: {
+          slidesPerView: 4,
+        },
+        768: {
+          slidesPerView: 7,
+        },
+        1024: {
+          slidesPerView: 8,
+        },
+        1200: {
+          slidesPerView: 10,
+        },
+        1367: {
+          slidesPerView: 12,
+        },
+      },
+    });
+
+
+
 const toggleQuizBtn = document.getElementById('toggleQuizBtn');
-const quizBox = document.getElementById('quizBox');
-const questions = document.querySelectorAll('.question');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const toggleIcon = toggleQuizBtn.querySelector('.toggle-icon i');
+  const quizBox = document.getElementById('quizBox');
+  const questions = document.querySelectorAll('.question');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const toggleIcon = toggleQuizBtn.querySelector('.toggle-icon i');
+  const questionCounter = document.getElementById('questionCounter');
 
-let currentQuestion = 0;
-let isSubmitted = false; // To prevent re-showing questions after submission
+  let currentQuestion = 0;
+  let isSubmitted = false;
 
-toggleQuizBtn.addEventListener('click', () => {
-  const currentDisplay = window.getComputedStyle(quizBox).display;
-  const isHidden = currentDisplay === 'none';
-  quizBox.style.display = isHidden ? 'block' : 'none';
-  toggleQuizBtn.classList.toggle('open', isHidden);
-});
-
-function showQuestion(index) {
-  if (isSubmitted) return; // prevent showing if already submitted
-
-  questions.forEach((q, i) => {
-    q.classList.toggle('active', i === index);
+  toggleQuizBtn.addEventListener('click', () => {
+    const currentDisplay = window.getComputedStyle(quizBox).display;
+    const isHidden = currentDisplay === 'none';
+    quizBox.style.display = isHidden ? 'block' : 'none';
+    toggleQuizBtn.classList.toggle('open', isHidden);
+    toggleIcon.classList.toggle('fa-angle-up', !isHidden);
+    toggleIcon.classList.toggle('fa-angle-down', isHidden);
   });
 
-  // Hide prevBtn if first question, show otherwise
-  prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+  function showQuestion(index) {
+    if (isSubmitted) return;
 
-  // Change Next button text to 'Submit' on last question
-  if (index === questions.length - 1) {
-    nextBtn.textContent = 'Submit';
-  } else {
-    nextBtn.textContent = 'Next';
+    questions.forEach((q, i) => {
+      q.classList.toggle('active', i === index);
+    });
+
+    // Show/hide prev button
+    prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+
+    // Change Next button to Submit if last question
+    nextBtn.textContent = index === questions.length - 1 ? 'Submit' : 'Next';
+
+    // Update counter text
+    questionCounter.textContent = ` ${index + 1} / ${questions.length}`;
   }
-}
 
-nextBtn.addEventListener('click', () => {
-  if (currentQuestion < questions.length - 1) {
-    currentQuestion++;
-    showQuestion(currentQuestion);
-  } else if (currentQuestion === questions.length - 1) {
-    submitQuiz();
+  nextBtn.addEventListener('click', () => {
+    if (currentQuestion < questions.length - 1) {
+      currentQuestion++;
+      showQuestion(currentQuestion);
+    } else if (currentQuestion === questions.length - 1) {
+      submitQuiz();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentQuestion > 0) {
+      currentQuestion--;
+      showQuestion(currentQuestion);
+    }
+  });
+
+  function submitQuiz() {
+    isSubmitted = true;
+    quizBox.innerHTML = `
+      <div class="text-center p-5">
+        <h4 class="text-success">Thank you!</h4>
+        <p>Your answers are submitted for evaluation.</p>
+      </div>
+    `;
   }
-});
 
-prevBtn.addEventListener('click', () => {
-  if (currentQuestion > 0) {
-    currentQuestion--;
-    showQuestion(currentQuestion);
-  }
-});
-
-function submitQuiz() {
-  isSubmitted = true;
-  quizBox.innerHTML = `
-    <div class="text-center p-5">
-      <h4 class="text-success">Thank you!</h4>
-      <p>Your answers are submitted for evaluation.</p>
-    </div>
-  `;
-}
-
-// Initialize visibility
-showQuestion(currentQuestion);
-
+  // Initialize on page load
+  showQuestion(currentQuestion);
 
 // table data
 // ==========================draggable-options

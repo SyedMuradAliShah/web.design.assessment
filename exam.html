@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="./assets/css/select2.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/swiper.min.css">
 </head>
 <body>
 <section class="exam-sec vh-100 overflow-auto border-top-0">
-    <div class="title position-fixed w-100 primary-bg py-2">
-        <div class="row row-cols-1 row-cols-md-3 align-items-center">
-            <div class="col mb-3 mb-md-0">
+    <div class=" position-fixed w-100" >
+      <div class="title py-2 px-3 px-md-5 primary-bg">
+        <div class="row row-cols-2 row-cols-md-3 align-items-center justify-content-between">
+            <!-- <div class="col mb-3 mb-md-0">
                 <div id="timer" class="bg-white fs-5 fw-semibold py-2 px-3 rounded-3">00:39:60</div>
-            </div>
+            </div> -->
             <div class="col mb-3 mb-md-0">
-                <div class="text-center text-white">
+                <div class=" text-white">
                     <span class="fs-5 fw-semibold">Assessment</span> <br>
                     <span class="">2025</span>
                 </div>
@@ -30,8 +32,31 @@
                 </div>
             </div>
         </div>
+
+      </div>
+        <div class="question-number px-md-5">
+ <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 1</div>
+      <div class="swiper-slide p-3 text-center text-white not-attempt">Q 2</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 3</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 4</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 5</div>
+      <div class="swiper-slide p-3 text-center text-white not-attempt">Q 6</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 7</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 8</div>
+      <div class="swiper-slide p-3 text-center text-white not-attempt">Q 9</div>
+      <div class="swiper-slide p-3 text-center text-white not-attempt">Q 10</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 11</div>
+      <div class="swiper-slide p-3 text-center text-white attempt">Q 12</div>
+      <div class="swiper-slide p-3 text-center text-white not-attempt">Q 13</div>
     </div>
-    <div class="exam-body mt-5 pt-5">
+  </div>
+    </div>
+    </div>
+    
+    <div class="exam-body">
         <div class="container">
            <div class="row row-cols-1 row-cols-lg-2 align-items-center">
             <div class="col">
@@ -144,8 +169,9 @@
               </div>
       </div>
     
-      <div class="btn-group d-flex justify-content-center gap-3 px-3 py-2 rounded-0">
+      <div class="btn-group d-flex justify-content-center align-items-center gap-3 px-3 py-2 rounded-0">
         <button id="prevBtn" class="rounded-2"><i class="fa-solid fa-arrow-left"></i></button>
+        <span id="questionCounter" class="fw-bold text-white">1 / 10</span>
         <button id="nextBtn" class="rounded-2"><i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
@@ -153,6 +179,7 @@
 </section>
         <!-- ===============script-tag=============== -->
          <script src="./assets/js/jquery.js"></script>
+         <script src="./assets/js/swiper.min.js"></script>
          <script src="./assets/js/script.js"></script>
          <script src="./assets/js/bootstrap.bundle.min.js"></script>
 </body>

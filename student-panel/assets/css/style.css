@@ -152,7 +152,7 @@ body {
   margin-left: auto;
 }
 .main-content .content-header {
-  background-color: var(--background);
+  background-color: var(--primary);
   border-radius: 10px;
 }
 .main-content .content-header #toggle-button {
@@ -164,8 +164,8 @@ body {
   border-radius: 100px;
   padding: 5px;
   font-size: 0.5rem;
-  background-color: var(--primary);
-  color: var(--background);
+  background-color: var(--background);
+  color: var(--primary);
 }
 .main-content .content-header .notifications button {
   background-color: transparent;
@@ -175,7 +175,7 @@ body {
   display: none;
 }
 .main-content .content-header .notifications button svg {
-  fill: var(--primary);
+  fill: var(--background);
 }
 .main-content .content-header .notifications .dropdown-menu {
   background-color: var(--background);
@@ -194,7 +194,7 @@ body {
   display: none;
 }
 .main-content .content-header .profile button svg {
-  fill: var(--primary);
+  fill: var(--background);
 }
 .main-content .content-header .profile .dropdown-menu {
   background-color: var(--background);
