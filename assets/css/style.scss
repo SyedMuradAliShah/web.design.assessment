@@ -130,7 +130,7 @@ $primary-color:#4b3cef;
     border: 1px solid gray;
     transition: all 0.3s ease;
     width: calc(100% - 250px);
-
+height: calc(100vh - 90px);
     &.expanded {
       width: 100% !important;
     }

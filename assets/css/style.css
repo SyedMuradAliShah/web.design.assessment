@@ -123,6 +123,7 @@ body {
   border: 1px solid gray;
   transition: all 0.3s ease;
   width: calc(100% - 250px);
+  height: calc(100vh - 90px);
 }
 .exam-body .reader-container.expanded {
   width: 100% !important;
