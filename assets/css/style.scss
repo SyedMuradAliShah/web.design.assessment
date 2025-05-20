@@ -74,18 +74,107 @@ $primary-color:#4b3cef;
       }
     
 }
-.question-number{
-    margin-top: 20px;
-   
-    .attempt{
-        background-color: green;
+
+.exam-body {
+  margin-top: 5rem;
+
+  .level-title {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: black;
+    padding: 10px;
+    color: #ffffff;
+  }
+
+  .summary {
+    width: 250px;
+    height: calc(100vh - 90px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+    background-color: #fff;
+
+    &.collapsed {
+      display: none;
     }
-    .not-attempt{
-        background-color: red;
+
+
+    .question-number {
+      padding: 14px;
+
+      .nmbr {
+        border: 1px solid gray;
+        padding: 6px 0;
+        border-radius: 12px;
+        width: 36px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        font-size: small;
+
+        &.attempt {
+          background-color: green;
+          color: #ffffff;
+        }
+
+        &.not-attempt {
+          background-color: red;
+          color: #ffffff;
+        }
+      }
     }
+  }
+
+  .reader-container {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+    width: calc(100% - 250px);
+
+    &.expanded {
+      width: 100% !important;
+    }
+  }
+
+  .toggle-summary {
+    background-color: $primary-color;
+    z-index: 1000;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+  }
 }
-.exam-body{
-    margin-top: 10rem;
+
+.reader-container {
+
+
+  .rich-text-content {
+    p {
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    h2,
+    h3 {
+      margin-top: 1.5rem;
+      font-weight: 700;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+  }
 }
 .exam-sec{
     border: 0.5rem solid $primary-color;
@@ -204,7 +293,26 @@ h5
       }
   } 
 
+@media (max-width: 768px) {
+  .exam-body {
+    flex-direction: column;
 
+    .reader-container {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .summary {
+      width: 100%;
+      height: auto;
+      position: relative;
+
+      &.collapsed {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
 
  
 

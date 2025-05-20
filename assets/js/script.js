@@ -7,27 +7,39 @@
       },
       breakpoints: {
         320: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
         640: {
-          slidesPerView: 4,
+          slidesPerView: 5,
         },
         768: {
-          slidesPerView: 7,
-        },
-        1024: {
           slidesPerView: 8,
         },
+        1024: {
+          slidesPerView: 9,
+        },
         1200: {
-          slidesPerView: 10,
+          slidesPerView: 11,
         },
         1367: {
-          slidesPerView: 12,
+          slidesPerView: 15,
         },
       },
     });
 
+  const toggleButton = document.querySelector('.toggle-summary');
+  const summaryPanel = document.querySelector('.summary');
+  const reader = document.querySelector('.reader-container');
+  const icon = toggleButton.querySelector('i');
 
+  toggleButton.addEventListener('click', function () {
+    summaryPanel.classList.toggle('collapsed');
+    reader.classList.toggle('expanded');
+
+    // Flip the icon direction
+    icon.classList.toggle('fa-angles-left');
+    icon.classList.toggle('fa-angles-right');
+  });
 
 const toggleQuizBtn = document.getElementById('toggleQuizBtn');
   const quizBox = document.getElementById('quizBox');
