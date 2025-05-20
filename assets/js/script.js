@@ -37,8 +37,8 @@
     reader.classList.toggle('expanded');
 
     // Flip the icon direction
-    icon.classList.toggle('fa-angles-left');
     icon.classList.toggle('fa-angles-right');
+    icon.classList.toggle('fa-angles-left');
   });
 
 const toggleQuizBtn = document.getElementById('toggleQuizBtn');
