@@ -1,111 +1,102 @@
- var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 3,
-        },
-        640: {
-          slidesPerView: 5,
-        },
-        768: {
-          slidesPerView: 8,
-        },
-        1024: {
-          slidesPerView: 9,
-        },
-        1200: {
-          slidesPerView: 11,
-        },
-        1367: {
-          slidesPerView: 15,
-        },
-      },
-    });
+// === SUMMARY TOGGLE HANDLING ===
+const summary = document.querySelector('.summary');
+const toggleBtn = document.querySelector('.toggle-summary');
+const icon = toggleBtn.querySelector('i');
+const readerContainer = document.querySelector('.reader-container');
 
-  const toggleButton = document.querySelector('.toggle-summary');
-  const summaryPanel = document.querySelector('.summary');
-  const reader = document.querySelector('.reader-container');
-  const icon = toggleButton.querySelector('i');
+// Initial setup: Show summary on desktop, hide on mobile
+function setInitialSummaryVisibility() {
+  if (window.innerWidth < 768) {
+    summary.classList.add('hidden');
+    readerContainer.classList.add('expanded');
+    icon.classList.replace('fa-angles-right', 'fa-angles-left');
+  } else {
+    summary.classList.remove('hidden');
+    readerContainer.classList.remove('expanded');
+    icon.classList.replace('fa-angles-left', 'fa-angles-right');
+  }
+}
 
-  toggleButton.addEventListener('click', function () {
-    summaryPanel.classList.toggle('collapsed');
-    reader.classList.toggle('expanded');
+// Run on page load
+setInitialSummaryVisibility();
 
-    // Flip the icon direction
-    icon.classList.toggle('fa-angles-right');
-    icon.classList.toggle('fa-angles-left');
-  });
+// Update on resize
+window.addEventListener('resize', setInitialSummaryVisibility);
 
+// Toggle summary on button click
+toggleBtn.addEventListener('click', () => {
+  summary.classList.toggle('hidden');
+  readerContainer.classList.toggle('expanded');
+  icon.classList.toggle('fa-angles-left');
+  icon.classList.toggle('fa-angles-right');
+});
+
+// === QUIZ TOGGLE HANDLING ===
 const toggleQuizBtn = document.getElementById('toggleQuizBtn');
-  const quizBox = document.getElementById('quizBox');
-  const questions = document.querySelectorAll('.question');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const toggleIcon = toggleQuizBtn.querySelector('.toggle-icon i');
-  const questionCounter = document.getElementById('questionCounter');
+const quizBox = document.getElementById('quizBox');
+const questions = document.querySelectorAll('.question');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const toggleIcon = toggleQuizBtn?.querySelector('.toggle-icon i');
+const questionCounter = document.getElementById('questionCounter');
 
-  let currentQuestion = 0;
-  let isSubmitted = false;
+let currentQuestion = 0;
+let isSubmitted = false;
 
-  toggleQuizBtn.addEventListener('click', () => {
-    const currentDisplay = window.getComputedStyle(quizBox).display;
-    const isHidden = currentDisplay === 'none';
-    quizBox.style.display = isHidden ? 'block' : 'none';
-    toggleQuizBtn.classList.toggle('open', isHidden);
-    toggleIcon.classList.toggle('fa-angle-up', !isHidden);
-    toggleIcon.classList.toggle('fa-angle-down', isHidden);
+// Show one question at a time
+function showQuestion(index) {
+  if (isSubmitted) return;
+
+  questions.forEach((q, i) => {
+    q.classList.toggle('active', i === index);
   });
 
-  function showQuestion(index) {
-    if (isSubmitted) return;
+  prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+  nextBtn.textContent = index === questions.length - 1 ? 'Submit' : 'Next';
+  questionCounter.textContent = `${index + 1} / ${questions.length}`;
+}
 
-    questions.forEach((q, i) => {
-      q.classList.toggle('active', i === index);
-    });
-
-    // Show/hide prev button
-    prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
-
-    // Change Next button to Submit if last question
-    nextBtn.textContent = index === questions.length - 1 ? 'Submit' : 'Next';
-
-    // Update counter text
-    questionCounter.textContent = ` ${index + 1} / ${questions.length}`;
+// Handle Next button
+nextBtn?.addEventListener('click', () => {
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  } else if (currentQuestion === questions.length - 1) {
+    submitQuiz();
   }
+});
 
-  nextBtn.addEventListener('click', () => {
-    if (currentQuestion < questions.length - 1) {
-      currentQuestion++;
-      showQuestion(currentQuestion);
-    } else if (currentQuestion === questions.length - 1) {
-      submitQuiz();
-    }
-  });
-
-  prevBtn.addEventListener('click', () => {
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      showQuestion(currentQuestion);
-    }
-  });
-
-  function submitQuiz() {
-    isSubmitted = true;
-    quizBox.innerHTML = `
-      <div class="text-center p-5">
-        <h4 class="text-success">Thank you!</h4>
-        <p>Your answers are submitted for evaluation.</p>
-      </div>
-    `;
+// Handle Prev button
+prevBtn?.addEventListener('click', () => {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion(currentQuestion);
   }
+});
 
-  // Initialize on page load
-  showQuestion(currentQuestion);
+// Submit Quiz
+function submitQuiz() {
+  isSubmitted = true;
+  quizBox.innerHTML = `
+    <div class="text-center p-5">
+      <h4 class="text-success">Thank you!</h4>
+      <p>Your answers are submitted for evaluation.</p>
+    </div>
+  `;
+}
+
+// Toggle quiz visibility (e.g. collapse/expand quiz box)
+toggleQuizBtn?.addEventListener('click', () => {
+  const currentDisplay = window.getComputedStyle(quizBox).display;
+  const isHidden = currentDisplay === 'none';
+  quizBox.style.display = isHidden ? 'block' : 'none';
+  toggleQuizBtn.classList.toggle('open', isHidden);
+  toggleIcon?.classList.toggle('fa-angle-up', !isHidden);
+  toggleIcon?.classList.toggle('fa-angle-down', isHidden);
+});
+
+// Initialize first question
+showQuestion(currentQuestion);
 
 // table data
 // ==========================draggable-options
